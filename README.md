@@ -7,7 +7,7 @@ Learn modern fullstack web development with ToDoS Project.
 ### Frontend
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=react,tailwindcss,vite,ts"><img/>
+  <img src="https://skillicons.dev/icons?i=react,tailwindcss,vite,html,ts"><img/>
 <a/>
 
 ### Backend
