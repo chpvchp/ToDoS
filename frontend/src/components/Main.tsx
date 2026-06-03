@@ -4,7 +4,7 @@ import Button from "./Button";
 import CardTodo from "./CardTodo";
 
 export default function Main() {
-  const { todos, getListTodo, createTodo } = useTodos();
+  const { todos, getListTodo, createTodo, removeTodo } = useTodos();
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Main() {
 
       <div className="flex gap-2">
         {todos.map((todo) => (
-          <CardTodo key={todo.id} title={todo.title}/>
+          <CardTodo key={todo.id} title={todo.title} onDelete={() => removeTodo(todo.id)}/>
         ))}
       </div>
     </main>

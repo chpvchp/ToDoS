@@ -35,3 +35,10 @@ def create_todo(todo: TODOS):
     id_todo += 1
     
     return {"message": "added"}, 200
+
+@app.delete("/todos/{todo_id}")
+def delete_todo(todo_id: int):
+    global list_todo
+    
+    list_todo = [todo for todo in list_todo if todo["id"] != todo_id]
+    return {"message": "deleted"}, 200
