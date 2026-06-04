@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addTodo, deleteTodo, getTodos } from "../api/todo.api";
+import { addTodo, deleteTodo, getTodos, editTodo } from "../api/todo.api";
 
 type ToDoS = {
   id: number;
@@ -25,10 +25,16 @@ export const useTodos = () => {
     await getListTodo();
   };
 
+  const changeTodo = async(id: number, new_title: string) => {
+    await editTodo(id, new_title);
+    await getListTodo();
+  }
+
   return {
     todos,
     getListTodo,
     createTodo,
     removeTodo,
+    changeTodo,
   };
 };
