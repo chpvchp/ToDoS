@@ -42,3 +42,13 @@ def delete_todo(todo_id: int):
     
     list_todo = [todo for todo in list_todo if todo["id"] != todo_id]
     return {"message": "deleted"}, 200
+
+@app.put("/todos/{todo_id}")
+def edit_todo(todo_id: int, todo: TODOS):
+    global list_todo
+    
+    for todo in list_todo:
+        if todo["id"] == todo_id:
+            todo["title"] = todo.title
+    
+    return {"message": "changed"}, 200
