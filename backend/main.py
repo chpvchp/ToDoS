@@ -47,8 +47,10 @@ def delete_todo(todo_id: int):
 def edit_todo(todo_id: int, todo: TODOS):
     global list_todo
     
-    for todo in list_todo:
-        if todo["id"] == todo_id:
-            todo["title"] = todo.title
+    print(todo)
+    
+    for todo_ in list_todo:
+        if todo_["id"] == todo_id:
+            todo_["title"] = todo.title
     
     return {"message": "changed"}, 200
