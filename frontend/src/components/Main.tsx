@@ -17,7 +17,7 @@ export default function Main() {
         label="Add todo"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        onClick={() => createTodo(title)}
+        onClick={async () => { await createTodo(title)}}
       />
 
       <p className="italic">---- List Todo ----</p>
@@ -28,6 +28,7 @@ export default function Main() {
             key={todo.id}
             title={todo.title}
             onDelete={() => removeTodo(todo.id)}
+            onRename={(newTitle) => changeTodo(todo.id, newTitle)}
           />
         ))}
       </div>
