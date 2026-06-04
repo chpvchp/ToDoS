@@ -12,7 +12,7 @@ export const addTodo = async (title: string) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ title })
+    body: JSON.stringify({ title }),
   });
   return await res.json();
 };
@@ -23,3 +23,14 @@ export const deleteTodo = async (id: number) => {
   });
   return await res.json();
 };
+
+export const editTodo = async (id: number, new_title: string) => {
+  const res = await fetch(`${BASE_URL}/todos/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ title: new_title}),
+  });
+  return await res.json();
+}
